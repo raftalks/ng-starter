@@ -1,0 +1,17 @@
+{
+  "name": "boilerplate",
+  "version": "0.0.1",
+  "description": "Angularjs boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "boilerplate"
+  ],
+  "author": "raftalks",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.8"
+  }
+}
