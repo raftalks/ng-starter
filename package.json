@@ -1,11 +1,15 @@
 {
-  "name": "boilerplate",
+  "name": "ng-starter",
   "version": "0.0.1",
   "description": "Angularjs boilerplate",
   "main": "app.js",
   "scripts": {
     "postinstall" : "bower install",
     "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raftalks/ng-starter"
   },
   "keywords": [
     "boilerplate"
