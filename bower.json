@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "ng-starter",
   "version": "0.0.1",
   "description": "angularjs boilerplate",
   "main": "src/app.js",
@@ -13,7 +13,6 @@
     "raftalks"
   ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
