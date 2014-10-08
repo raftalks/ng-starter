@@ -339,3 +339,5 @@ gulp.task('test', function(cb) {
 	console.log('Tests are pending...');
 });
 
+
+gulp.task('default', ['watch']);
