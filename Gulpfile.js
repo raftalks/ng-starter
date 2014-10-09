@@ -235,7 +235,7 @@ gulp.task('build:compile', ['clean:dist'], function()
 
 //compile angularjs app templates
 gulp.task('template:app', function(cb) {
-
+	console.log('compiling app templates ');
 	return gulp.src(buildConfig.files.templates.app)
 	.pipe(html2js({
 		outputModuleName: 'app-templates',
@@ -250,6 +250,7 @@ gulp.task('template:app', function(cb) {
 //compile angularjs common templates
 gulp.task('template:common', function(cb) {
 
+	console.log('compiling template common');
 	return gulp.src(buildConfig.files.templates.common)
 	.pipe(html2js({
 		outputModuleName: 'common-templates',
@@ -291,6 +292,7 @@ gulp.task('watch:files', function(cb) {
     		runsequence('index:build');
     	});
 
+    gulp.watch(buildConfig.files.index, ['index:rebuild']);
 
     gulp.watch([buildConfig.files.less.app, buildConfig.files.css.app], function(evt) {
     	runsequence('build:app_less', 'index:rebuild');
@@ -300,11 +302,11 @@ gulp.task('watch:files', function(cb) {
     	runsequence('build:vendor_less', 'index:rebuild');
     });
 
-    gulp.src(buildConfig.files.templates.app, function(evt) {
+    gulp.watch(buildConfig.files.templates.app, function(evt) {
     	runsequence('template:app', 'index:rebuild');
     });
    
-    gulp.src(buildConfig.files.templates.common, function(evt) {
+    gulp.watch(buildConfig.files.templates.common, function(evt) {
     	runsequence('template:common', 'index:rebuild');
     });
 
@@ -317,13 +319,16 @@ gulp.task('watch:files', function(cb) {
 
 gulp.task('build', function(cb) {
 	
-	runsequence('clean:build',['template:app', 'template:common', 'images:build'], 'index:build')
+	runsequence('clean:build',['template:app', 'template:common', 'images:build'], 'index:build');
 	console.log('build task completed.');
 });
 
 
 
-gulp.task('watch', ['build','watch:files']);
+gulp.task('watch', function(cb) {
+
+	runsequence('watch:files');
+});
 
 
 
