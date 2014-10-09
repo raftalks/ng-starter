@@ -23,8 +23,11 @@
   ],
   "dependencies": {
     "angular": "1.2.26",
-    "angular-route": "~1.2.26",
-    "angular-mocks": "~1.2.26"
+    "angular-mocks": "~1.2.26",
+    "angular-ui-router": "~0.2.11",
+    "angular-resource": "~1.2.26",
+    "modernizr": "~2.8.3",
+    "jquery": "~2.1.1"
   },
   "devDependencies": {
     "bootstrap": "~3.2.0"
