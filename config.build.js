@@ -21,14 +21,17 @@ module.exports = {
 		js: {
 
 			vendor: [
+				'vendor/jquery/dist/jquery.js',
 				'vendor/angular/angular.js',
-				'vendor/angular-mocks/angular-mocks.js'
+				'vendor/angular-resource/angular-resource.js',
+				'vendor/angular-ui-router/release/angular-ui-router.js',
+				'vendor/modernizr/modernizr.js'
 			],
 
 			app: [
 				'src/common/**/*.js',
 				'!src/common/**/*.spec.js',
-				'src/app/**.js',
+				'src/app/**/*.js',
 				'!src/app/**/*.spec.js'
 			]
 		},
