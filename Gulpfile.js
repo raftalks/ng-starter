@@ -327,7 +327,7 @@ gulp.task('build', function(cb) {
 
 gulp.task('watch', function(cb) {
 
-	runsequence('watch:files', cb);
+	runsequence('build', 'watch:files', cb);
 });
 
 
