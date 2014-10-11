@@ -1,0 +1,36 @@
+@sidebar-width: 250px;
+@sidebar-background-color: #000;
+@sidebar-color: #fffff;
+
+
+.sidebar-layout {
+	
+	.sidebar-nav {
+
+		color: @sidebar-color;
+		display: block;
+		list-style: none;
+        width: @sidebar-width;
+
+        li {
+
+        	margin-top: 10px;
+        	margin-bottom: 10px;
+
+        	a{
+        		text-decoration: none;
+        		color:@sidebar-color;
+        		line-height: 20px;
+        	}
+        }
+	}
+
+	.sidebar-container {
+		
+		background: @sidebar-background-color;
+	    height: 100%;
+	    z-index: 1000;
+	    transition: all .4s ease 0s;
+	}
+}
+
