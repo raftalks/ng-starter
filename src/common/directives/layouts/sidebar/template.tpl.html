@@ -1,21 +1,18 @@
-<div class='container-fluid sidebar-layout'>
+<div id="sidebar-layout" ng-class="{'show-nav' : wrapper_toggle}">
+  
+   <div id="sidebar-canvas">
+    
+     <div id="sidebar">
+     	<div class='header'>
+     		<a href="#" class="toggle-nav btn btn-success pull-right" ng-click='toggleMenu()'><i class="fa fa-bars"></i></a>
+     	</div>
+     	<div class='clearfix'></div>
+     	<div ui-view='sidebar'></div>
+     </div>
+     
+    
+     <div ng-transclude></div>
+    
+  </div>
 
-    <div class='row'>
-        <div class='col-md-12'>
-            <div class='row'>
-            
-                <div class='col-md-2 sidebar-container col-md-height'>
-                    <ul class="sidebar-nav">
-                        <li class="sidebar-brand"><a href="#">Home</a></li>
-                        <li><a href="#">Another link Testing Something</a></li>
-                        <li><a href="#">Next link</a></li>
-                        <li><a href="#">Last link</a></li>
-                    </ul>
-                </div>
-                <div class='col-md-10 col-md-height' ng-transclude>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
