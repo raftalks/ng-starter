@@ -319,7 +319,7 @@ gulp.task('watch:files', function(cb) {
 
 gulp.task('build', function(cb) {
 	
-	runsequence('clean:build',['template:app', 'template:common', 'images:build'], 'index:build');
+	runsequence('clean:build',['template:app', 'template:common', 'images:build'], 'index:build', cb);
 	console.log('build task completed.');
 });
 
@@ -327,13 +327,13 @@ gulp.task('build', function(cb) {
 
 gulp.task('watch', function(cb) {
 
-	runsequence('watch:files');
+	runsequence('watch:files', cb);
 });
 
 
 
 gulp.task('compile', function(cb) {
-	runsequence('build', 'build:compile');
+	runsequence('build','build:compile', cb);
 	console.log('compiling completed');
 });
 
