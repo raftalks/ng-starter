@@ -4,6 +4,7 @@
 
 	/* global angular */
 	angular.module('app.common', [
+		'ui.bootstrap',
 		'common-templates',
 		'app-templates', 
 		'com.registry',
