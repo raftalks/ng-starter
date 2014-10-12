@@ -1,0 +1,8 @@
+<div class='app-container'>
+    <div class='app-block' ng-repeat='item in items'>
+        <a ui-sref='{{item.state}}' >
+        <span class='app-img'><i ng-class='item.class'></i></span>
+        <span class='app-title' ng-bind='item.label'></span>
+        </a>
+    </div>
+</div>

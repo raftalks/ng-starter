@@ -14,6 +14,17 @@
 				brand : '@'
 			}
 		};
+	})
+
+	.directive('wAppMenu', function() {
+
+		return {
+			restrict: 'E',
+			templateUrl: 'common/directives/widgets/menu/app-menu.tpl.html',
+			scope: {
+				items : '=ngModel'
+			}
+		};
 	});
 
 })();
