@@ -12,7 +12,19 @@
 		return {
 			restrict: 'E',
 			transclude: true,
-			templateUrl: 'common/directives/layouts/sidebar/template.tpl.html'
+			replace: true,
+			templateUrl: 'common/directives/layouts/sidebar/template.tpl.html',
+			link: function(scope) {
+
+				scope.wrapper_toggle = false;
+
+				scope.toggleMenu = function()
+				{
+					scope.wrapper_toggle = !scope.wrapper_toggle;
+
+					console.log('toggle', scope.wrapper_toggle);
+				}
+			}
 		};
 
 	}]);

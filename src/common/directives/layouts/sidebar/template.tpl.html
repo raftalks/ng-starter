@@ -1,21 +1,64 @@
-<div class='container-fluid sidebar-layout'>
-
-    <div class='row'>
-        <div class='col-md-12'>
+<div id="sidebar-layout" ng-class="{'show-nav' : wrapper_toggle}">
+  
+   <div id="sidebar-canvas">
+    
+     <div id="sidebar">
+     	<div class='header'>
             <div class='row'>
-            
-                <div class='col-md-2 sidebar-container col-md-height'>
-                    <ul class="sidebar-nav">
-                        <li class="sidebar-brand"><a href="#">Home</a></li>
-                        <li><a href="#">Another link Testing Something</a></li>
-                        <li><a href="#">Next link</a></li>
-                        <li><a href="#">Last link</a></li>
-                    </ul>
+                <div class='col-xs-8'>
+                    <span class='sidebar-title'>Apps</span>
                 </div>
-                <div class='col-md-10 col-md-height' ng-transclude>
-                    
+                <div class='col-xs-4'>
+                    <a class="toggle-nav btn pull-right" ng-click='toggleMenu()'><i class="fa fa-bars"></i></a>
                 </div>
             </div>
+            <div class='border-bottom'></div>
+            
+     		
+     	</div>
+     	<div class='clearfix'></div>
+     	<div ui-view='sidebar'></div>
+
+        <div class='app-container'>
+            
+            
+            <div class='app-block'>
+                <span class='app-img'><i class='fa fa-newspaper-o'></i></span>
+                <span class='app-title'>CMS</span>
+            </div>
+            <div class='app-block'>
+                <span class='app-img'><i class='fa fa-send'></i></span>
+                <span class='app-title'>Products</span>
+            </div>
+            <div class='app-block'>
+                <span class='app-img'><i class='fa fa-tasks'></i></span>
+                <span class='app-title'>Tasks</span>
+            </div>
+            
+            <div class='app-block'>
+                <span class='app-img'><i class='fa fa-envelope-o'></i></span>
+                <span class='app-title'>Messages</span>
+            </div>
+            <div class='app-block'>
+                <span class='app-img'><i class='fa fa-flag'></i></span>
+                <span class='app-title'>Logs</span>
+            </div>
+            <div class='app-block app-users'>
+                <span class='app-img'><i class='fa fa-users'></i></span>
+                <span class='app-title'>Users</span>
+            </div>
+            <div class='app-block app-settings'>
+                <span class='app-img'><i class='fa fa-cog'></i></span>
+                <span class='app-title'>Settings</span>
+            </div>
         </div>
-    </div>
+
+        
+     </div>
+     
+    
+     <div id='layout-content' ng-transclude></div>
+    
+  </div>
+
 </div>

@@ -2,35 +2,115 @@
 @sidebar-background-color: #000;
 @sidebar-color: #fffff;
 
+/*
+* Uses Font Awesome and Bootstrap 3
+* Both aren't required for this demo
+*/
+#sidebar-layout {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 
-.sidebar-layout {
-	
-	.sidebar-nav {
+	#sidebar-canvas {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		padding-left:47px;
+		top:0px;
 
-		color: @sidebar-color;
-		display: block;
-		list-style: none;
-        width: @sidebar-width;
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
 
-        li {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
 
-        	margin-top: 10px;
-        	margin-bottom: 10px;
+		-webkit-transition: 300ms ease all;
+		transition: 300ms ease all;
 
-        	a{
-        		text-decoration: none;
-        		color:@sidebar-color;
-        		line-height: 20px;
-        	}
-        }
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+
 	}
 
-	.sidebar-container {
-		
-		background: @sidebar-background-color;
-	    height: 100%;
-	    z-index: 1000;
-	    transition: all .4s ease 0s;
+	&.show-nav #sidebar-canvas {
+		-webkit-transform: translateX(@sidebar-width);
+		transform: translateX(@sidebar-width);
+
+		-webkit-transform: translate3d(@sidebar-width, 0, 0);
+		transform: translate3d(@sidebar-width, 0, 0);
+	}
+
+	#layout-content {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	#sidebar {
+	  width: (@sidebar-width + 47px);
+	  height: 100%;
+	  position: absolute;
+	  top: 0;
+	  left: (@sidebar-width * -1);
+	  background: #444;
+	  padding: 5px;
+	  color: #fff;
+
+	  .sidebar-title {
+	  	display: inline-block;
+	  	margin: 5px;
+	  }
+
+	  .border-bottom {
+	  	padding-bottom: 3px;
+	  	border-bottom: 1px solid #333;
+	  }
+
+	  .app-container {
+	
+	  	width: 250px;
+	  	padding:4px;
+	  }
+
+	  .app-block {
+	  	width: 60px;
+	  	height: 75px;
+	  	overflow: hidden;
+	  	float: left;
+
+	  	.app-img {
+	  		display: inline-block;
+	  		font-size: 30px;
+	  		line-height: 50px;
+	  		text-align: center;
+	  		vertical-align: bottom;
+	  		width:50px;
+	  		height: 50px;
+	  		margin: 0 auto;
+	  		margin-top:4px;
+	  		background: red;
+	  		border-radius: 5px;
+	  		margin-bottom: 3px;
+	  	}
+
+	  	.app-title {
+	  		display: block;
+	  		text-align: center;
+	  		font-size: 10px;
+	  		font-style: normal;
+	  		font-family: 'Arial';
+	  	}
+
+	  	&:hover .app-img {
+	  		border: 2px solid #ddd;
+	  	}
+	  }
+	}
+
+	.toggle-nav:hover {
+		color:#fff;
 	}
 }
-

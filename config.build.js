@@ -3,13 +3,15 @@ module.exports = {
 	build_dir: './build',
 	js_build_dir: './build/js',
 	css_build_dir: './build/css',
-	img_build_dir: './build/images',
+	assets_build_dir: './build/assets',
+	img_build_dir: './build/assets/images',
 	build_dir_files: './build/**/*',
 
 	dist_dir: './dist',
 	js_dist_dir: './dist/js',
 	css_dist_dir: './dist/css',
-	img_dist_dir: './dist/images',
+	assets_dist_dir: './build/assets',
+	img_dist_dir: './dist/assets/images',
 	dist_dir_files: './dist/**/*',
 
 
@@ -24,6 +26,7 @@ module.exports = {
 				'vendor/jquery/dist/jquery.js',
 				'vendor/angular/angular.js',
 				'vendor/angular-resource/angular-resource.js',
+				'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
 				'vendor/angular-ui-router/release/angular-ui-router.js',
 				'vendor/modernizr/modernizr.js'
 			],
@@ -39,21 +42,25 @@ module.exports = {
 		less: {
 
 			vendor: [
-				'vendor/bootstrap/less/bootstrap.less'
+				'./src/less/vendor.less'
 			],
 
-			app: ['src/less/**/*.less', 'src/common/**/*.less', 'src/app/**/*.less']
+			app: ['src/less/**/*.less', 'src/common/**/*.less', './src/app/**/*.less', '!./src/less/vendor.less']
 		},
 
 		css : {
 
 			vendor: [],
 
-			app:['src/less/**/*.css', 'src/common/**/*.css', 'src/app/**/*.css']
+			app:['src/less/**/*.css', 'src/common/**/*.css', './src/app/**/*.css']
 		},
 
 		img: {
 			all: ['src/images/**/*']
+		},
+
+		assets: {
+			vendor: ['./vendor/bootstrap/fonts/**/*', './vendor/font-awesome/fonts/**/*']
 		},
 
 		templates: {

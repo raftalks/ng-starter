@@ -74,6 +74,15 @@ gulp.task('build:app', ['clean:buildapp'], function(cb) {
 	return stream;
 });
 
+
+
+gulp.task('build:vendor_assets', function(cb) {
+
+	return gulp.src(buildConfig.files.assets.vendor, {base: 'vendor'})
+	.pipe(gulp.dest(buildConfig.assets_build_dir));
+
+});
+
 // build the app css files
 gulp.task('build:app_less', ['clean:build_style_css'], function(cb) {
 
@@ -232,6 +241,13 @@ gulp.task('build:compile', ['clean:dist'], function()
 });
 
 
+gulp.task('compile:vendor_assets', function(cb) {
+
+	return gulp.src(buildConfig.files.assets.vendor, {base: 'vendor'})
+	.pipe(gulp.dest(buildConfig.assets_dist_dir));
+
+});
+
 
 //compile angularjs app templates
 gulp.task('template:app', function(cb) {
@@ -319,7 +335,7 @@ gulp.task('watch:files', function(cb) {
 
 gulp.task('build', function(cb) {
 	
-	runsequence('clean:build',['template:app', 'template:common', 'images:build'], 'index:build', cb);
+	runsequence('clean:build',['template:app', 'template:common', 'images:build', 'build:vendor_assets'], 'index:build', cb);
 	console.log('build task completed.');
 });
 
@@ -333,7 +349,7 @@ gulp.task('watch', function(cb) {
 
 
 gulp.task('compile', function(cb) {
-	runsequence('build','build:compile', cb);
+	runsequence('build',['compile:vendor_assets', 'build:compile'], cb);
 	console.log('compiling completed');
 });
 
