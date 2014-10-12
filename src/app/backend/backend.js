@@ -2,7 +2,8 @@
 	'use strict';
 
 	angular.module('app.backend', [
-        'backend.dashboard'
+        'backend.dashboard',
+        'backend.cms'
     ])
 
 	.config(['$stateProvider', '$urlRouterProvider',
@@ -14,19 +15,40 @@
                 views: {
                     '@': {
                         templateUrl: 'common/views/layouts/sidebar.tpl.html',
+                        controller: 'backendController'
                     },
-                    'sidebar@app.be': {
-                        template: '<div><w:menu ng-model="menu_links" brand="Starter Kit"></w:menu></div>'
+                    'sidebar@be': {
+                        template: '<div><w:app-menu ng-model="menu_links"></w:app-menu></div>'
                     }
                 }
             })
 
 	}])
 
-    .controller('backendController', ['$scope', '$log', function($scope, $log) {
+    .constant('backendMenuItems', [
+        {
+            label:'Home',
+            state: 'fe.home',
+            class: 'fa fa-home'
+        },
+
+        {
+            label:'Dashboard',
+            state: 'be.dashboard',
+            class: 'fa fa-dashboard'
+        },
+
+        {
+            label:'CMS',
+            state: 'be.cms',
+            class: 'fa fa-newspaper-o'
+        }
+    ])
+
+    .controller('backendController', ['$scope', '$log', 'backendMenuItems', function($scope, $log, backendMenuItems) {
 
         // defne the backend menu        
-        $scope.menu_links = [{label: 'home', link:'/'}, {label:'dashboard', link:'/dashboard'}];
+        $scope.menu_links = backendMenuItems;
 
     }]);
 
