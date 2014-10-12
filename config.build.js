@@ -26,6 +26,7 @@ module.exports = {
 				'vendor/jquery/dist/jquery.js',
 				'vendor/angular/angular.js',
 				'vendor/angular-resource/angular-resource.js',
+				'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
 				'vendor/angular-ui-router/release/angular-ui-router.js',
 				'vendor/modernizr/modernizr.js'
 			],
