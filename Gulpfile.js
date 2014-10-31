@@ -215,12 +215,14 @@ gulp.task('build:compile', ['clean:dist'], function()
 	var templates = [buildConfig.js_build_dir + '/app-templates.js', buildConfig.js_build_dir + '/common-templates.js'];
 	var images = buildConfig.img_build_dir + '/**/*';
 
-	var all_js_files = vendor_js.concat(templates, app_files);
+	var app_js_files_stream = gulp.src(app_files.concat(templates)).pipe(ngfilesort());
+	var vendor_js_files_stream = gulp.src(vendor_js);
+
+	//var all_js_files = vendor_js.concat(templates, app_files);
 	var all_css_files = vendor_css.concat(app_css);
 
 	//concat and compile all the js files
-	var jsfilesStream = gulp.src(all_js_files)
-		.pipe(ngfilesort())
+	var jsfilesStream = es.merge(vendor_js_files_stream, app_js_files_stream)
 		.pipe(concat('app.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest(buildConfig.js_dist_dir));
