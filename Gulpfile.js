@@ -220,7 +220,6 @@ gulp.task('build:compile', ['clean:dist'], function()
 
 	//concat and compile all the js files
 	var jsfilesStream = gulp.src(all_js_files)
-		.pipe(ngfilesort())
 		.pipe(concat('app.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest(buildConfig.js_dist_dir));
