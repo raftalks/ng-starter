@@ -56,7 +56,7 @@ module.exports = {
 		},
 
 		img: {
-			all: ['src/images/**/*']
+			all: ['src/assets/images/**/*']
 		},
 
 		assets: {
