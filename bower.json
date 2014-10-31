@@ -1,6 +1,6 @@
 {
   "name": "ng-starter",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "angularjs boilerplate",
   "main": "src/app.js",
   "moduleType": [
