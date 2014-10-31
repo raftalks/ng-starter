@@ -10,7 +10,7 @@ module.exports = {
 	dist_dir: './dist',
 	js_dist_dir: './dist/js',
 	css_dist_dir: './dist/css',
-	assets_dist_dir: './build/assets',
+	assets_dist_dir: './dist/assets',
 	img_dist_dir: './dist/assets/images',
 	dist_dir_files: './dist/**/*',
 
@@ -56,7 +56,7 @@ module.exports = {
 		},
 
 		img: {
-			all: ['src/images/**/*']
+			all: ['src/assets/images/**/*']
 		},
 
 		assets: {
