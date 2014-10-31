@@ -60,7 +60,7 @@ module.exports = {
 		},
 
 		assets: {
-			vendor: ['./vendor/bootstrap/fonts/**/*', './vendor/font-awesome/fonts/**/*']
+			vendor: ['vendor/bootstrap/fonts/**/*', 'vendor/font-awesome/fonts/**/*']
 		},
 
 		templates: {
