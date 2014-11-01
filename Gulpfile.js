@@ -44,14 +44,14 @@ gulp.task('clean:buildapp', function(cb) {
 
 gulp.task('clean:build_style_css', function(cb) {
 
-	var css_path = buildConfig.js_build_dir + '/style.css';
+	var css_path = buildConfig.css_build_dir + '/style.css';
 	del(css_path, cb);
 
 });
 
 gulp.task('clean:build_vendor_css', function(cb) {
 
-	var css_path = buildConfig.js_build_dir + '/vendor.css';
+	var css_path = buildConfig.css_build_dir + '/vendor.css';
 	del(css_path, cb);
 
 });
