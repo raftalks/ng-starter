@@ -305,7 +305,7 @@ gulp.task('watch:files', function(cb) {
 
     gulp.watch('config.build.js', function(evt)
     	{
-    		delete require.cache[require.resolve('./config.build.js')]
+    		delete require.cache[require.resolve('./config.build.js')];
     		buildConfig = require('./config.build.js');
     		runsequence('index:build');
     	});
